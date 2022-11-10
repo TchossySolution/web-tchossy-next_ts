@@ -2,19 +2,18 @@ export const defaultTheme = {
   colors: {
     'base-white': '#FFFFFF',
     'base-black': '#000000',
-    'base-background': '#504F50',
+    'base-background': '#FFFFFF',
     'base-background-dark': '#3A3A3A',
-    'base-text': '#EDEDED',
+    'base-text': '#6C6A72',
     'base-subtitle': '#F0F0F0',
-    'base-title': '#F3F2F2',
+    'base-text-bold': '#1D1729',
     'base-error': '#f84747',
     'brand-primary-dark': '#B47507',
-    'brand-primary': '#DC9D30',
+    'brand-primary': '#5F2DEE',
     'brand-primary-light': '#EBE5F9',
-    'brand-secundary-dark': '#200808',
-    'brand-secundary': '#2D1414',
-    'brand-secundary-light': '#F1E9C9',
-    header: '#0f0f0f'
+    'brand-secondary-dark': '#200808',
+    'brand-secondary': '#B882FC',
+    'brand-secondary-light': '#F1E9C9'
   },
   textSizes: {
     'title-title-xl': '3rem',

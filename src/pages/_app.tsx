@@ -5,7 +5,9 @@ import { AppLayoutProps } from '../@types/pageWithLayoutsTypes'
 import { GlobalStyle } from '../styles/global'
 import { defaultTheme } from '../themes/default'
 
-function Tchossy({ Component, pageProps }: AppLayoutProps) {
+import '../i18n/index'
+
+function MyApp({ Component, pageProps }: AppLayoutProps) {
   const Layout =
     Component.layout || ((children: ReactElement) => <>{children}</>)
 
@@ -18,4 +20,4 @@ function Tchossy({ Component, pageProps }: AppLayoutProps) {
     </ThemeProvider>
   )
 }
-export default Tchossy
+export default MyApp

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { LayoutProps } from '../@types/pageWithLayoutsTypes'
 
-const RootLayout: LayoutProps = ({ children }) => {
+const RootLayoutFinances: LayoutProps = ({ children }) => {
   return (
     <>
       <Head>
@@ -15,4 +15,4 @@ const RootLayout: LayoutProps = ({ children }) => {
   )
 }
 
-export default RootLayout
+export default RootLayoutFinances

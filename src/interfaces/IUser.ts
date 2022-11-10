@@ -13,6 +13,6 @@ export type UserInterface = {
 
 export enum Gender {
   masculino = 'Masculino',
-  femenino = 'Femenino',
+  feminino = 'Feminino',
   undisclosed = 'undisclosed'
 }

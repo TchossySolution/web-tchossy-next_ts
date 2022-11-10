@@ -21,7 +21,7 @@ export const TitleTxt = styled.h1<titleTxtProps>`
 `
 
 export const RegularTxt = styled.h1<regularTxtProps>`
-  color: ${({ theme, color }) => theme.colors[`base-title`]};
+  color: ${({ theme, color }) => theme.colors[`base-${color ?? 'title'}`]};
   font-size: ${({ theme, size }) =>
     theme.textSizes[`text-regular-${size ?? 'm'}`]};
   font-family: ${({ theme }) => theme.fonts.regular};

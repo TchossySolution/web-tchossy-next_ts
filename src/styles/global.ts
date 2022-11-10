@@ -1,12 +1,21 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
   }
+
+  /* 
+    html {
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    } 
+  */
+  
   body {
     background: ${({ theme }) => theme.colors['base-background']};
     color: ${({ theme }) => theme.colors['base-text']};
@@ -22,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors['base-black']};
+    color: ${({ theme }) => theme.colors['base-white']};
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

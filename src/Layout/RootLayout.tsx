@@ -5,7 +5,7 @@ const RootLayout: LayoutProps = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Tabuleiro</title>
+        <title>Tchossy</title>
         <meta name="description" content="Tchossy" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

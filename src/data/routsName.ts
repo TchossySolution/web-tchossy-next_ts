@@ -1,3 +1,11 @@
 export const routsNameMain = {
-  home: '/'
+  home: '/main',
+  otherPages: {
+    projects: '/projects',
+    team: '/team'
+  },
+  about: '/about',
+  service: '/service',
+  blog: '/blog',
+  contact: '/contact'
 }

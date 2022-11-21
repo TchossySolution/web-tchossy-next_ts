@@ -31,7 +31,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors['base-white']};
   }
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

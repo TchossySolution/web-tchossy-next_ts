@@ -1,0 +1,92 @@
+import RootLayoutMain from '../../Layout/RootLayoutMain'
+
+function Home() {
+  return (
+    <main>
+      <h1>Tchossy</h1>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+      <p>Solution</p>
+    </main>
+  )
+}
+
+Home.layout = RootLayoutMain
+
+export default Home

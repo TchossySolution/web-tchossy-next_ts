@@ -16,11 +16,11 @@ function HeaderMain() {
         <div className="containerMenu">
           <div className="containerTop">
             <div className="containerLeft">
-              <p>Bem-vindo Tchossy Solution</p>
+              <p>Bem-vindo ao Tchossy Solution</p>
 
               <div className="baseInfo">
                 <div className="containerEmail">
-                  <MdEmail color={defaultTheme.colors['brand-primary']} />
+                  <MdEmail color={defaultTheme.colors['brand-secondary']} />
                   <a href="mailto:tchossysolution@outlook.com">
                     <span>tchossysolution@outlook.com</span>
                   </a>
@@ -28,7 +28,7 @@ function HeaderMain() {
 
                 <div className="containerTime">
                   <MdAccessTimeFilled
-                    color={defaultTheme.colors['brand-primary']}
+                    color={defaultTheme.colors['brand-secondary']}
                   />
                   <span>Seg - Sáb 8h ás 19h</span>
                 </div>

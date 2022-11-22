@@ -80,9 +80,6 @@ function Home() {
       <p>Solution</p>
       <p>Solution</p>
       <p>Solution</p>
-      <p>Solution</p>
-      <p>Solution</p>
-      <p>Solution</p>
     </main>
   )
 }

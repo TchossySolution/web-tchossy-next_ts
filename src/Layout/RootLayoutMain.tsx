@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { LayoutProps } from '../@types/pageWithLayoutsTypes'
+import FooterMain from '../components/_main/Footer'
 import HeaderMain from '../components/_main/Header'
 
 const RootLayoutMain: LayoutProps = ({ children }) => {
@@ -12,6 +13,7 @@ const RootLayoutMain: LayoutProps = ({ children }) => {
       </Head>
       <HeaderMain />
       <div>{children}</div>
+      <FooterMain />
     </>
   )
 }

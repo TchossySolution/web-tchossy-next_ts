@@ -6,10 +6,54 @@ import { defaultTheme } from '../../../themes/default'
 
 import { HeaderContainerStyles, SLink, SLinkContainer } from './styles'
 import { routsNameMain } from '../../../data/routsName'
+import { AppContext } from '../../../context/AppProvider'
+import { useContext, useEffect, useState } from 'react'
+import ModalMenuMobile from '../modals/ModalMenuMobile'
+import ModalSearch from '../modals/ModalSearch'
+import { BiMenuAltLeft } from 'react-icons/bi'
 
 function HeaderMain() {
+  const [showHeader, setShowHeader] = useState<boolean>(true)
+  const {
+    isSignedIn,
+    menuIsVisible,
+    setMenuIsVisible,
+    searchIsVisible,
+    setSearchIsVisible
+  } = useContext(AppContext)
+
+  const hiddenHeader = () => {
+    if (window.scrollY >= 1249) {
+      alert('1')
+      setShowHeader(false)
+    } else {
+      alert('2')
+      setShowHeader(true)
+    }
+  }
+
+  const openMenu = () => {
+    setMenuIsVisible(true)
+  }
+  const openSearch = () => {
+    setSearchIsVisible(true)
+  }
+
+  useEffect(() => {
+    // window.addEventListener('scroll', hiddenHeader)
+  }, [])
+
   return (
     <>
+      <ModalMenuMobile
+        menuIsVisible={menuIsVisible}
+        setMenuIsVisible={setMenuIsVisible}
+      />
+      <ModalSearch
+        setSearchIsVisible={setSearchIsVisible}
+        searchIsVisible={searchIsVisible}
+      />
+
       <HeaderContainerStyles>
         <div className="containerLogo">Tchossy</div>
 
@@ -73,8 +117,10 @@ function HeaderMain() {
               </SLinkContainer>
             </nav>
 
+            <div></div>
+
             <div className="containerOtherInfo">
-              <BsSearch />
+              <BsSearch onClick={openSearch} />
 
               <div className="containerContact">
                 <span className="containerCall">
@@ -89,6 +135,10 @@ function HeaderMain() {
             </div>
           </div>
         </div>
+
+        <span className="containerIconMenu">
+          <BiMenuAltLeft className="iconsMenu" onClick={openMenu} />
+        </span>
       </HeaderContainerStyles>
     </>
   )

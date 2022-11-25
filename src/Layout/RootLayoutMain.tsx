@@ -9,7 +9,7 @@ const RootLayoutMain: LayoutProps = ({ children }) => {
       <Head>
         <title>Tchossy</title>
         <meta name="description" content="Tchossy" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/it_logo.png" />
       </Head>
       <HeaderMain />
       <div>{children}</div>

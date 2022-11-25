@@ -94,8 +94,8 @@ export const FooterContainerStyles = styled.footer`
       gap: 2rem;
       max-width: 24rem;
 
-      h1 {
-        color: ${({ theme }) => theme.colors['base-white']};
+      img {
+        width: 80%;
       }
 
       .containerSocialMedia {

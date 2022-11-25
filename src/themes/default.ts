@@ -6,7 +6,7 @@ export const defaultTheme = {
     'base-background': '#FFFFFF',
     'base-background-dark': '#3A3A3A',
     'base-background-dark-black': '#929292d2',
-    'base-title': '#F3F2F2',
+    'base-title': '#000313',
     'base-subtitle': '#F0F0F0',
     'base-error': '#f84747',
     'base-text': '#6C6A72',

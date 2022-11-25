@@ -5,12 +5,17 @@ import { NavLink } from '../../NavLink'
 
 export const HeaderContainerStyles = styled.header`
   position: sticky;
+  top: 0;
   width: 100%;
   height: 6.8rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  background-color: ${({ theme }) => theme.colors['base-white']};
+  border-bottom: 0.08rem solid #ddd;
+
+  z-index: 99;
 
   .containerLogo {
     width: 18.4rem;
@@ -23,6 +28,10 @@ export const HeaderContainerStyles = styled.header`
 
     font-size: 2rem;
     color: #eee;
+
+    img {
+      width: 96%;
+    }
   }
 
   .containerMenu {

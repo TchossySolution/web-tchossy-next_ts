@@ -55,7 +55,9 @@ function HeaderMain() {
       />
 
       <HeaderContainerStyles>
-        <div className="containerLogo">Tchossy</div>
+        <div className="containerLogo">
+          <img src="it_logo_name.png" alt="Tchossy" />
+        </div>
 
         <div className="containerMenu">
           <div className="containerTop">

@@ -26,6 +26,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: ${({ theme }) => theme.textSizes['text-regular-m']}
   }
+  ul{
+    li{
+      list-style: none;
+    }
+  }
+  
   button {
     cursor: pointer;
   }

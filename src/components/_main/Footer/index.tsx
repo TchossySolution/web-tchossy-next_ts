@@ -19,7 +19,7 @@ function FooterMain() {
       <FooterContainerStyles>
         <div className="containerTop">
           <div className="containerInfoTchossy">
-            <h1>TchossySolution</h1>
+            <img src="it_logo_name.png" alt="Tchossy" />
 
             <p>
               Trabalhamos com paixão de enfrentar desafios e criar soluções

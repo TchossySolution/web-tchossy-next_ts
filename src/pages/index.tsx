@@ -7,7 +7,7 @@ import { routsNameMain } from '../data/routsName'
 function Home() {
   const router = useRouter()
   useEffect(() => {
-    router.replace(routsNameMain.home)
+    // router.replace(routsNameMain.home)
   }, [])
 
   return (

@@ -17,7 +17,6 @@ export const BaseButtonContainer = styled.button`
   gap: 0.6rem;
 
   border: none;
-  border-radius: ${({ theme }) => theme.border['border-f']};
 
   transition: 0.2s ease;
 

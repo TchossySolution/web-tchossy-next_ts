@@ -29,6 +29,40 @@ export const TimeContainer = styled.div`
       width: 100%;
       vertical-align: middle;
       display: inline-block;
+      transition: 0.5s ease;
+    }
+
+    .containerSocialMedia {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.2rem;
+      padding: 1rem 1rem;
+
+      background-color: ${({ theme }) => theme.colors['base-white']};
+
+      transition: 0.4s ease;
+      transform: rotateY(90deg);
+      z-index: 2;
+
+      a {
+        color: ${({ theme }) => theme.colors['base-title']};
+        padding: 0.8rem 0.08rem;
+
+        svg {
+          color: ${({ theme }) => theme.colors['base-title']};
+          font-size: 1.1rem;
+        }
+
+        :hover {
+          color: ${({ theme }) => theme.colors['brand-primary']};
+        }
+      }
     }
 
     .shadow {
@@ -39,29 +73,27 @@ export const TimeContainer = styled.div`
       height: 0%;
       background-color: #0f0f0f42;
       transition: ease 0.46s;
+
+      z-index: 1;
     }
   }
 
   .containerContent {
     width: 100%;
-    height: auto;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
 
     .containerInfo {
       width: 100%;
-      height: auto;
 
       background-color: ${({ theme }) => theme.colors['base-white']};
 
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
       gap: 0.6rem;
-      padding: 1.4rem 3rem;
       text-align: left;
 
       transition: ease 0.5s;
@@ -79,10 +111,43 @@ export const TimeContainer = styled.div`
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      .containerShare {
+        width: 3rem;
+        height: 3rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: ${({ theme }) => theme.colors['brand-primary']};
+
+        svg {
+          font-size: 1rem;
+          color: ${({ theme }) => theme.colors['base-white']};
+
+          transition: 0.5s ease;
+        }
+      }
     }
   }
 
   :hover {
+    .containerSocialMedia {
+      transform: rotateY(0deg);
+    }
+
+    .containerImgMember {
+      img {
+        transform: scale(1.04);
+      }
+    }
+
+    .containerShare {
+      svg {
+        transform: rotateY(340deg);
+      }
+    }
     .shadow {
       height: calc(100% - 0.2rem);
     }

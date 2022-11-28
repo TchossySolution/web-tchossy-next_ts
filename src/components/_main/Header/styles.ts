@@ -164,12 +164,12 @@ export const HeaderContainerStyles = styled.header`
         display: flex;
         align-items: center;
         flex-direction: row;
-        padding: 0.6rem 0;
-        gap: 1.6rem;
+        padding: 0.6rem 1rem;
+        gap: 1rem;
 
         svg {
           color: ${({ theme }) => theme.colors['base-black']};
-          font-size: 2.2rem;
+          font-size: 1.8rem;
           transition: 0.3s;
 
           :hover {
@@ -177,20 +177,10 @@ export const HeaderContainerStyles = styled.header`
           }
         }
 
-        .containerCall {
-          width: 3rem;
-          height: 3rem;
-          display: flex;
+        .containerLang {
           align-items: center;
           justify-content: center;
-          background-color: ${({ theme }) => theme.colors['brand-primary']};
-          border-radius: 100%;
-
-          svg {
-            color: ${({ theme }) => theme.colors['base-white']};
-            font-size: 1.6em;
-            transition: 0.2s;
-          }
+          gap: 1rem;
         }
 
         .containerContact {

@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react'
 import { IChildren } from '../interfaces/children'
 import { UserInterface } from '../interfaces/IUser'
+import { defaultTheme } from '../themes/default'
 
 interface AppContextInterface {
   isSignedIn: boolean
@@ -11,6 +12,9 @@ interface AppContextInterface {
   setMenuIsVisible: (value: any) => void
   searchIsVisible: boolean
   setSearchIsVisible: (value: any) => void
+  theme: string
+  setTheme: (value: any) => void
+  themeToggler: () => void
   isDarkMode: boolean
   setIsDarkMode: (value: any) => void
 }
@@ -28,10 +32,17 @@ const AppProvider: React.FC<IChildren> = ({ children }): JSX.Element => {
     email: '',
     password: ''
   })
+
   const [menuIsVisible, setMenuIsVisible] = useState<boolean>(false)
   const [searchIsVisible, setSearchIsVisible] = useState<boolean>(false)
 
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false)
+
+  const [theme, setTheme] = useState('light')
+
+  const themeToggler = () => {
+    theme == 'light' ? setTheme('dark') : setTheme('light')
+  }
 
   return (
     <AppContext.Provider
@@ -44,8 +55,11 @@ const AppProvider: React.FC<IChildren> = ({ children }): JSX.Element => {
         setMenuIsVisible,
         searchIsVisible,
         setSearchIsVisible,
+        theme,
+        setTheme,
         isDarkMode,
-        setIsDarkMode
+        setIsDarkMode,
+        themeToggler
       }}
     >
       {children}

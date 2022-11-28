@@ -1,20 +1,25 @@
 import Head from 'next/head'
-import { ReactElement } from 'react'
+import { ReactElement, useContext } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { AppLayoutProps } from '../@types/pageWithLayoutsTypes'
 import { GlobalStyle } from '../styles/global'
 import { defaultTheme } from '../themes/default'
+import { darkTheme } from '../themes/darkTheme'
 
 import '../i18n/index'
-import { AppProvider } from '../context/AppProvider'
+import { AppContext, AppProvider } from '../context/AppProvider'
+import { AppLayoutProps } from '../models/types/pageWithLayoutsTypes'
 
 function MyApp({ Component, pageProps }: AppLayoutProps) {
   const Layout =
     Component.layout || ((children: ReactElement) => <>{children}</>)
 
+  const { theme } = useContext(AppContext)
+
+  const themeMode = theme == 'light' ? defaultTheme : darkTheme
+
   return (
     <AppProvider>
-      <ThemeProvider theme={defaultTheme}>
+      <ThemeProvider theme={themeMode}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

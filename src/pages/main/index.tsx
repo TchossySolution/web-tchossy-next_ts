@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 import { useRouter } from 'next/router'
 
 //Swiper
@@ -9,15 +11,20 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 // Modulos de Icons
-import { FaIdCard, FaMoneyCheckAlt } from 'react-icons/fa'
+import { SiOpenai } from 'react-icons/si'
 import { BsFillCheckCircleFill, BsFillPlayFill } from 'react-icons/bs'
-import { GiSmartphone } from 'react-icons/gi'
+import { GiSmartphone, GiSpikesFull } from 'react-icons/gi'
 import {
   MdComputer,
   MdDesignServices,
   MdOutlineSupportAgent,
   MdOutlineWork
 } from 'react-icons/md'
+import { GrVolumeControl } from 'react-icons/gr'
+
+// Modulos de aos animação de scroll
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 // Layout
 import RootLayoutMain from '../../Layout/RootLayoutMain'
@@ -39,13 +46,22 @@ import ButtonBase from '../../components/_main/buttons/ButtonBase'
 import { AiFillCode, AiFillStar } from 'react-icons/ai'
 import RenderTime from '../../components/_main/renders/RenderTime'
 import { NavLink } from '../../components/NavLink'
+import RenderResumeService from '../../components/_main/renders/RenderResumeService'
+import RenderProject from '../../components/_main/renders/RenderProject'
+import RenderDeponents from '../../components/_main/renders/RenderDeponents'
+import RenderPrice from '../../components/_main/renders/RenderPrices'
+import { TfiWorld } from 'react-icons/tfi'
 
 function Home() {
   const router = useRouter()
 
   const date = new Date()
 
-  const solutions = [
+  function solicitation() {
+    router.push('')
+  }
+
+  const docSolutions = [
     {
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/service1-01.jpg',
@@ -65,7 +81,7 @@ function Home() {
       icon: <AiFillCode size={36} />
     }
   ]
-  const listSolutions = solutions.map((item, index) => (
+  const listSolutions = docSolutions.map((item, index) => (
     <RenderSolutions
       key={index}
       imgUrl={item.imgUrl}
@@ -74,39 +90,125 @@ function Home() {
     />
   ))
 
-  const memberTime = [
+  const docServices1 = [
+    {
+      title: 'Desenvolvimento de software',
+      description:
+        'Produtos de software programados para atender às metas de negócios.',
+      icon: <AiFillStar size={36} />
+    },
+    {
+      title: 'Consultoria de TI',
+      description:
+        'Melhoria da produtividade da equipe, redução de custos, vantagem competitiva e muito mais.',
+      icon: <MdDesignServices size={36} />
+    },
+    {
+      title: 'Marketing Digital',
+      description: 'Pesquise e avalie negócios, público e concorrentes.',
+      icon: <AiFillStar size={36} />
+    }
+  ]
+  const listServices1 = docServices1.map((item, index) => (
+    <RenderResumeService
+      key={index}
+      title={item.title}
+      description={item.description}
+      icon={item.icon}
+    />
+  ))
+  const docServices2 = [
+    {
+      title: 'Criação de identidade visual',
+      description:
+        'Oferecemos uma variedade das melhores estratégias de marketing para expandir seus negócios.',
+      icon: <AiFillCode size={36} />
+    },
+    {
+      title: 'consultoria de TI',
+      description:
+        'Melhoria da produtividade da equipe, redução de custos, vantagem competitiva e muito mais.',
+      icon: <MdDesignServices size={36} />
+    },
+    {
+      title: 'Estratégia de mercado',
+      description:
+        'Oferecemos uma variedade das melhores estratégias de marketing para expandir seus negócios.',
+      icon: <AiFillCode size={36} />
+    }
+  ]
+  const listServices2 = docServices2.map((item, index) => (
+    <RenderResumeService
+      key={index}
+      title={item.title}
+      description={item.description}
+      icon={item.icon}
+    />
+  ))
+
+  const docMemberTime = [
     {
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team-02.jpg',
       name: 'Cristian Perry',
       role: 'Desenvolvedor',
-      socialLinks: {
-        type: 'facebook',
-        link: 'facebook'
-      }
+      socialLinks: [
+        {
+          type: 'facebook',
+          link: 'facebook'
+        },
+        {
+          type: 'instagram',
+          link: 'instagram'
+        },
+        {
+          type: 'twitter',
+          link: 'twitter'
+        }
+      ]
     },
     {
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team.jpg',
       name: 'Ana Mia Joice',
       role: 'Designer',
-      socialLinks: {
-        type: 'facebook',
-        link: 'facebook'
-      }
+      socialLinks: [
+        {
+          type: 'facebook',
+          link: 'facebook'
+        },
+        {
+          type: 'instagram',
+          link: 'instagram'
+        },
+        {
+          type: 'twitter',
+          link: 'twitter'
+        }
+      ]
     },
     {
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team-03.jpg',
       name: 'Luana Sofia',
       role: 'Analista',
-      socialLinks: {
-        type: 'facebook',
-        link: 'facebook'
-      }
+      socialLinks: [
+        {
+          type: 'facebook',
+          link: 'facebook'
+        },
+        {
+          type: 'instagram',
+          link: 'instagram'
+        },
+        {
+          type: 'twitter',
+          link: 'twitter'
+        }
+      ]
     }
   ]
-  const listMemberTime = memberTime.map((item, index) => (
+  const listMemberTime = docMemberTime.map((item, index) => (
     <RenderTime
       key={index}
       imgUrl={item.imgUrl}
@@ -115,6 +217,109 @@ function Home() {
       socialLinks={item.socialLinks}
     />
   ))
+
+  const docClients = [
+    {
+      imgUrl: 'clients/buildora.png',
+      link: '#'
+    },
+    {
+      imgUrl: 'clients/ka.jpg',
+      link: '#'
+    },
+    {
+      imgUrl: 'clients/pungo.png',
+      link: '#'
+    },
+    {
+      imgUrl: 'clients/tvone.png',
+      link: '#'
+    }
+  ]
+  const listarClients = docClients.map((item, index) => {
+    return (
+      <>
+        <div key={index} className="clients">
+          <NavLink href={item.link}>
+            <img src={item.imgUrl} alt="" />
+          </NavLink>
+        </div>
+      </>
+    )
+  })
+
+  const docProjects = [
+    {
+      imgUrl:
+        'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/project01.jpg',
+      link: '#',
+      category: 'Marketing Inteligente',
+      tags: ['Visão', 'Ideias']
+    },
+    {
+      imgUrl:
+        'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/project04.jpg',
+      link: '#',
+      category: 'Identidade visual',
+      tags: ['Design', 'Identidade']
+    },
+    {
+      imgUrl:
+        'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/project02.jpg',
+      link: '#',
+      category: 'Consultoria',
+      tags: ['Ideias']
+    }
+  ]
+  const listarProjects = docProjects.map((item, index) => {
+    return (
+      <RenderProject
+        key={index}
+        imgUrl={item.imgUrl}
+        category={item.category}
+        link={item.link}
+        tags={item.tags}
+      />
+    )
+  })
+
+  const docDeponents = [
+    {
+      imgUrl:
+        'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/10/team-08.jpg',
+      author: 'Aleesha Smith',
+      deponents:
+        'A Infetech é uma provedora de serviços de consultoria em TI e desenvolvimento de software.',
+      numberStars: 5
+    },
+    {
+      imgUrl:
+        'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/10/team-07.jpg',
+      author: 'Mike Hardson',
+      deponents:
+        'Ajudam organizações e empresas que não são de TI a melhorar o desempenho dos negócios.											',
+      numberStars: 3
+    },
+    {
+      imgUrl:
+        'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team06.jpg',
+      author: 'Aleeshe Smith',
+      deponents:
+        'A Infetech é uma provedora de serviços de consultoria em TI e desenvolvimento de software.',
+      numberStars: 4
+    }
+  ]
+  const listarDeponents = docDeponents.map((item, index) => {
+    return (
+      <RenderDeponents
+        key={index}
+        imgUrl={item.imgUrl}
+        author={item.author}
+        deponents={item.deponents}
+        numberStars={item.numberStars}
+      />
+    )
+  })
 
   const newNotices = [
     {
@@ -153,9 +358,73 @@ function Home() {
     />
   ))
 
+  const docPrices = [
+    {
+      titlePlane: 'Plano Básico',
+      descriptionPlane: 'Projetado para empresas com requisitos básicos de TI',
+      icon: <SiOpenai />,
+      price: '70.250',
+      textPlaneInclude: 'Todos os serviços básicos incluem:',
+      serviceIncluded: [
+        'Monitoramento do sistema 24/7',
+        'Gerenciamento de segurança',
+        'Gerenciamento de patches',
+        'Suporte remoto'
+      ],
+      onClick: solicitation()
+    },
+    {
+      titlePlane: 'Plano Sliver',
+      descriptionPlane: 'Projetado para empresas com requisitos médios de TI',
+      icon: <TfiWorld />,
+      price: '70.250',
+      textPlaneInclude: 'Todos os serviços sliver incluem:',
+      serviceIncluded: [
+        'Monitoramento do sistema 24/7',
+        'Gerenciamento de segurança',
+        'Gerenciamento de patches',
+        'Suporte remoto'
+      ],
+      onClick: solicitation()
+    },
+    {
+      titlePlane: 'Plano Profissional',
+      descriptionPlane:
+        'Projetado para empresas com requisitos profissional de TI',
+      icon: <GiSpikesFull />,
+      price: '70.250',
+      textPlaneInclude: 'Todos os serviços profissional incluem:',
+      serviceIncluded: [
+        'Monitoramento do sistema 24/7',
+        'Gerenciamento de segurança',
+        'Gerenciamento de patches',
+        'Suporte remoto'
+      ],
+      onClick: solicitation()
+    }
+  ]
+  const listarPrices = docPrices.map((item, index) => {
+    return (
+      <RenderPrice
+        key={index}
+        titlePlane={item.titlePlane}
+        descriptionPlane={item.descriptionPlane}
+        icon={item.icon}
+        price={item.price}
+        textPlaneInclude={item.textPlaneInclude}
+        serviceIncluded={item.serviceIncluded}
+        onClick={item.onClick}
+      />
+    )
+  })
+
   function goTo(path: string) {
     router.push(path)
   }
+
+  useEffect(() => {
+    Aos.init({ duration: 1500 })
+  }, [])
 
   return (
     <ContainerHome>
@@ -187,7 +456,7 @@ function Home() {
           <div className="containerAboutUs">
             <div className="contentLeft">
               <div className="containerImagesTop">
-                <div className="containerImg1">
+                <div className="containerImg1" data-aos="fade-right">
                   <img src="images/about01.jpg" alt="" />
                 </div>
                 <div className="containerImg2">
@@ -196,13 +465,13 @@ function Home() {
               </div>
 
               <div className="containerImagesBottom">
-                <div className="containerImg">
+                <div className="containerImg" data-aos="fade-left">
                   <img src="images/about02.jpg" alt="" />
                 </div>
               </div>
             </div>
 
-            <div className="contentRight">
+            <div className="contentRight" data-aos="fade-up">
               <div className="containerTitleSection">
                 <h4>Sobre sua empresa</h4>
                 <h1>Somos Parceiros de Suas Inovações</h1>
@@ -259,9 +528,48 @@ function Home() {
         </div>
       </section>
 
-      <section className="solutions">
+      <section className="solutions ">
         <div className="containerContent">
-          <div className="contentSolutions">{listSolutions}</div>
+          <div className="contentSolutions" data-aos="fade-right">
+            {listSolutions}
+          </div>
+        </div>
+      </section>
+
+      <section className="services">
+        <div className="containerContent">
+          <div className="containerServices">
+            <div className="containerHeader">
+              <div className="containerLeft">
+                <div className="containerTitleSection">
+                  <div>
+                    <h4>O que estamos oferecendo aos nossos clientes</h4>
+                    <h1 style={{ color: '#fff' }}>
+                      Negociação em todos os serviços profissionais
+                    </h1>
+                  </div>
+                </div>
+              </div>
+
+              <div className="containerRight" data-aos="fade-left">
+                <p style={{ color: '#bbbbbb' }}>
+                  Oferecemos serviços de desenvolvimento de software de ciclo
+                  completo que atendem a vários requisitos de negócios, desde
+                  consultoria em estratégia de TI até o desenvolvimento de ponta
+                  a ponta de soluções escaláveis.
+                </p>
+              </div>
+            </div>
+
+            <div className="containerColumnServices">
+              <div className="containerRowServices" data-aos="fade-left">
+                {listServices1}
+              </div>
+              <div className="containerRowServices" data-aos="fade-right">
+                {listServices2}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -322,7 +630,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="containerRight">
+              <div className="containerRight" data-aos="fade-left">
                 <p>
                   Amamos ajudar pessoas e negócios a crescerem. Apostamos na
                   excelência para execução dos nossos serviços.
@@ -330,30 +638,85 @@ function Home() {
               </div>
             </div>
 
-            <div className="containerClientsRow">
-              <div className="clients">
-                <NavLink href="">
-                  <img src="clients/buildora.png" alt="" />
-                </NavLink>
+            <div className="containerClientsRow" data-aos="fade-up">
+              {listarClients}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="projects">
+        <div className="containerContent">
+          <div className="containerProjects">
+            <div className="containerHeader">
+              <div className="containerLeft">
+                <div className="containerTitleSection">
+                  <div>
+                    <h4>Nossos Projetos Concluídos</h4>
+                    <h1>Conheça alguns dos nossos projectos</h1>
+                  </div>
+                </div>
               </div>
 
-              <div className="clients">
-                <NavLink href="">
-                  <img src="clients/ka.jpg" alt="" />
-                </NavLink>
+              <div className="containerRight" data-aos="fade-left">
+                <p>
+                  Existem vários projetos bem-sucedidos, desde consultoria em
+                  estratégia de TI até o desenvolvimento end-to-end de soluções
+                  escaláveis ​​feitas por nossos criativos e experientes
+                  profissionais.
+                </p>
+              </div>
+            </div>
+
+            <div className="containerProjectsRow" data-aos="fade-up">
+              {listarProjects}
+            </div>
+
+            <div className="containerBottom">
+              <ButtonSeeMore
+                value={'Ver mais projectos'}
+                onClick={() => goTo(routsNameMain.home)}
+                colorBase={defaultTheme.colors['brand-primary']}
+                colorSecondary={defaultTheme.colors['brand-super-dark']}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="deponents">
+        <div className="containerContent">
+          <div className="containerDeponents">
+            <div className="containerHeader">
+              <div className="containerLeft">
+                <div className="containerTitleSection">
+                  <div>
+                    <h4>Depoimentos de clientes</h4>
+                    <h1>O que eles estão falando?</h1>
+                  </div>
+                </div>
               </div>
 
-              <div className="clients">
-                <NavLink href="">
-                  <img src="clients/pungo.png" alt="" />
-                </NavLink>
+              <div className="containerRight" data-aos="fade-left">
+                <p>
+                  Porttitor scelerisque eu fringilla consectetur tellus,
+                  facilisi viverra. Nascetur luctus feugiat sed aliquam tellus
+                  aliquet risus tortor tellus.
+                </p>
               </div>
+            </div>
 
-              <div className="clients">
-                <NavLink href="">
-                  <img src="clients/tvone.png" alt="" />
-                </NavLink>
-              </div>
+            <div className="containerDeponentsRow" data-aos="fade-up">
+              {listarDeponents}
+            </div>
+
+            <div className="containerBottom">
+              <ButtonSeeMore
+                value={'Ver outros depoimentos'}
+                onClick={() => goTo(routsNameMain.home)}
+                colorBase={defaultTheme.colors['brand-primary']}
+                colorSecondary={defaultTheme.colors['brand-super-dark']}
+              />
             </div>
           </div>
         </div>
@@ -376,7 +739,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="containerRight">
+              <div className="containerRight" data-aos="fade-left">
                 <p>
                   Conheça uma equipe de profissionais experientes e conhecedores
                   que deixam nossos clientes satisfeitos com sua capacidade de
@@ -386,7 +749,9 @@ function Home() {
               </div>
             </div>
 
-            <div className="containerMemberExperts">{listMemberTime}</div>
+            <div className="containerMemberExperts" data-aos="fade-up">
+              {listMemberTime}
+            </div>
           </div>
         </div>
       </section>
@@ -409,7 +774,7 @@ function Home() {
 
               <div className="containerContent">
                 <h6>Você precisa de uma solução?</h6>
-                <h1>
+                <h1 data-aos="fade-up">
                   Economize tempo e dinheiro com uma das principais agências de
                   soluções
                 </h1>
@@ -417,7 +782,7 @@ function Home() {
             </div>
 
             <div className="containerRight">
-              <div className="containerCalculations">
+              <div className="containerCalculations" data-aos="flip-left">
                 <div className="containerIcon">
                   <MdOutlineWork />
                 </div>
@@ -428,7 +793,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="containerCalculations">
+              <div className="containerCalculations" data-aos="flip-left">
                 <div className="containerIcon">
                   <MdOutlineSupportAgent />
                 </div>
@@ -456,13 +821,30 @@ function Home() {
         </div>
       </section>
 
+      <section className="prices">
+        <div className="containerContent">
+          <div className="containerPrices">
+            <div className="containerTitleSection">
+              <div>
+                <h4>Nossos planos de preços</h4>
+                <h1>Planos de preços transparentes adequados para você</h1>
+              </div>
+            </div>
+
+            <div className="containerPricesRow" data-aos="fade-up">
+              {listarPrices}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="exploreUs">
-        <div className="containerLinesLeft">
+        <div className="containerLinesLeft" data-aos="fade-up">
           <div className="line1"></div>
           <div className="line2"></div>
         </div>
 
-        <div className="containerLinesRight">
+        <div className="containerLinesRight" data-aos="fade-down">
           <div className="line1"></div>
           <div className="line2"></div>
           <div className="line3"></div>
@@ -474,12 +856,12 @@ function Home() {
 
         <div className="containerContent">
           <div className="contentExploreUs">
-            <div>
+            <div data-aos="fade-right">
               <h3>Estamos aqui para ajudar a crescer o seu negócio.</h3>
               <h1>Procurando as melhores soluções de negócios de TI?</h1>
             </div>
 
-            <div>
+            <div data-aos="fade-left">
               <ButtonSeeMore
                 value={'Saber mais'}
                 onClick={() => goTo(routsNameMain.home)}

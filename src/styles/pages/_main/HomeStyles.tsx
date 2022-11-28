@@ -4,7 +4,6 @@ export const ContainerHome = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10rem;
   overflow: hidden;
 
   .containerSwiper {
@@ -63,6 +62,7 @@ export const ContainerHome = styled.div`
 
     .containerContent {
       width: 85%;
+      max-width: 1390px;
 
       display: flex;
       flex-direction: row;
@@ -82,12 +82,12 @@ export const ContainerHome = styled.div`
       flex-direction: row;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 1.2rem;
+      gap: 4rem 1.2rem;
 
       padding: 1.6rem 0;
 
       @media (max-width: 1254px) {
-        gap: 6.2rem;
+        gap: 8rem 2rem;
         /* display: none; */
       }
     }
@@ -165,6 +165,7 @@ export const ContainerHome = styled.div`
       position: relative;
 
       width: 100%;
+      margin: 10rem 0;
 
       display: flex;
       flex-direction: row;
@@ -240,6 +241,7 @@ export const ContainerHome = styled.div`
           }
         }
       }
+
       .contentRight {
         width: 50%;
 
@@ -330,6 +332,58 @@ export const ContainerHome = styled.div`
         }
       }
     }
+
+    @media (max-width: 1082px) {
+      .containerAboutUs {
+        flex-direction: column;
+
+        .contentLeft {
+          width: 100%;
+
+          padding-bottom: 8rem;
+          margin-bottom: 2rem;
+        }
+        .contentRight {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      .containerAboutUs {
+        .contentLeft {
+          margin-bottom: 0rem;
+          gap: 1rem;
+
+          .containerImagesBottom {
+            position: relative;
+            right: 0rem;
+
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .containerImg {
+              position: relative;
+              display: block;
+
+              width: 100%;
+              max-height: 26rem;
+
+              object-fit: cover;
+              overflow: hidden;
+
+              img {
+                vertical-align: middle;
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
   .solutions {
@@ -344,6 +398,31 @@ export const ContainerHome = styled.div`
       justify-content: center;
       flex-wrap: wrap;
       gap: 6rem 2rem;
+
+      z-index: 10;
+    }
+  }
+
+  .services {
+    padding: 10rem 0 6rem 0;
+    background-color: ${({ theme }) => theme.colors['brand-base-dark']};
+    background-image: url('backgrounds/bg-khow-us.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .containerColumnServices {
+      padding: 2.6rem 0;
+
+      .containerRowServices {
+        width: 100%;
+        margin-top: 0.28rem;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.28rem;
+        flex-flow: row wrap;
+      }
     }
   }
 
@@ -362,7 +441,11 @@ export const ContainerHome = styled.div`
       gap: 5rem;
 
       background-color: transparent;
-      background-image: linear-gradient(270deg, #b882fc 0%, #5f2dee 100%);
+      background-image: linear-gradient(
+        270deg,
+        ${props => props.theme.colors['brand-pink']} 0%,
+        ${props => props.theme.colors['brand-pink-dark']} 100%
+      );
 
       .coverBackground {
         position: absolute;
@@ -443,9 +526,13 @@ export const ContainerHome = styled.div`
   }
 
   .ourClients {
+    width: 100%;
+    margin: 6rem 0;
+
     .containerClientsRow {
       width: 100%;
       padding-top: 4rem;
+
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -474,6 +561,65 @@ export const ContainerHome = styled.div`
           transform: scale(1.1);
         }
       }
+    }
+  }
+
+  .projects {
+    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
+    background-color: #f5f5f5d5;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .containerProjectsRow {
+      width: 100%;
+      margin-top: 2.6rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2.6rem;
+      flex-flow: row wrap;
+    }
+
+    .containerBottom {
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      padding: 2.8rem 0 5rem 0;
+    }
+  }
+
+  .deponents {
+    margin: 6rem 0 0 0;
+    padding: 6rem 0 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .containerDeponentsRow {
+      width: 100%;
+      margin-top: 2.6rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2.6rem;
+      flex-flow: row wrap;
+    }
+
+    .containerBottom {
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      padding: 2.8rem 0 5rem 0;
     }
   }
 
@@ -568,7 +714,7 @@ export const ContainerHome = styled.div`
         height: calc(100% + 16rem);
         width: 10rem;
         background-color: ${({ theme }) => theme.colors['brand-primary']};
-        opacity: 0.4;
+        opacity: 0.5;
       }
     }
 
@@ -730,6 +876,7 @@ export const ContainerHome = styled.div`
 
   .ourBlog {
     width: 100%;
+    margin: 10rem 0;
 
     .containerOurBlog {
       width: 100%;
@@ -738,6 +885,24 @@ export const ContainerHome = styled.div`
       align-items: center;
       justify-content: center;
       flex-direction: column;
+    }
+  }
+
+  .prices {
+    margin: 3rem 0 6rem 0;
+    padding: 3rem 0 6rem 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .containerPricesRow {
+      width: 100%;
+      margin-top: 2.6rem;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 2.6rem;
+      flex-flow: row wrap;
     }
   }
 

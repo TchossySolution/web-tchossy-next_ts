@@ -1,4 +1,4 @@
-export const defaultTheme = {
+export const darkTheme = {
   colors: {
     'base-white': '#FFFFFF',
     'base-black': '#000000',

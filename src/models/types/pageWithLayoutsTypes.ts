@@ -3,14 +3,14 @@ import { AppProps } from 'next/app'
 
 import { ReactElement } from 'react'
 
-import RootLayout from '../Layout/RootLayout'
-import RootLayoutFinances from '../Layout/RootLayoutFinances'
+import RootRestaurantLayout from '../../Layout/RootRestaurantLayout'
+import RootTabuleiroLayout from '../../Layout/RootTabuleiroLayout'
 
 export type PageWithTabuleiroLayoutType = NextPageContext & {
-  layout: typeof RootLayoutFinances
+  layout: typeof RootTabuleiroLayout
 }
 export type PageWithRestaurantLayoutType = NextPageContext & {
-  layout: typeof RootLayout
+  layout: typeof RootRestaurantLayout
 }
 
 export type PageWithLayoutType =

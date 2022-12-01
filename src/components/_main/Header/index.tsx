@@ -234,7 +234,7 @@ function HeaderMain() {
                 </span>
 
                 <span>
-                  <SLink href={routsNameMain.blog as string}>Blog</SLink>
+                  <SLink href={routsNameMain.blog.index as string}>Blog</SLink>
                 </span>
 
                 <span>

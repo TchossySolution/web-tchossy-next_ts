@@ -10,7 +10,7 @@ const StarRating = ({ numberStars }: StarRatingInterface) => {
   const [hover, setHover] = useState(0)
   return (
     <StarRatingContainer>
-      {[...Array(5)].map((star, index) => {
+      {[...Array(numberStars)].map((star, index) => {
         index += 1
         return (
           <button

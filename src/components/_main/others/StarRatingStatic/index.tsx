@@ -7,8 +7,12 @@ interface StarRatingStaticInterface {
 const StarRatingStatic = ({ numberStars }: StarRatingStaticInterface) => {
   return (
     <StarRatingStaticContainer>
-      {[...Array(numberStars)].map(star => {
-        return <span className="star">&#9733;</span>
+      {[...Array(numberStars)].map((star, index) => {
+        return (
+          <span key={index} className="star">
+            &#9733;
+          </span>
+        )
       })}
     </StarRatingStaticContainer>
   )

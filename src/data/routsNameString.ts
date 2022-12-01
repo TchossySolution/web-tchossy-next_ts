@@ -1,21 +1,21 @@
 const baseMain = 'main'
 
-export const routsNameMain = {
+export const routsNameString = {
   home: `/${baseMain}`,
   otherPages: {
     projects: `/${baseMain}/projects`,
     team: {
       index: `/${baseMain}/team`,
-      details: `/${baseMain}/team/[id]`
+      details: `/${baseMain}/team/`
     }
   },
   about: `/${baseMain}/about`,
   service: `/${baseMain}/service`,
   blog: {
     index: `/${baseMain}/blog`,
-    tag: `/${baseMain}/blog/[...blog]`,
-    details: `/${baseMain}/blog/post/[...slug]`,
-    category: `/${baseMain}/blog/[...blog]`
+    tag: `/${baseMain}/blog/tag/`,
+    details: `/${baseMain}/blog/post/`,
+    category: `/${baseMain}/blog/category/`
   },
   contact: `/${baseMain}/contact`
 }

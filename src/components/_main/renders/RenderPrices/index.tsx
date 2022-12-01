@@ -37,10 +37,10 @@ const RenderPrice: React.FC<RenderPriceInterface> = ({
 
         <p> {descriptionPlane} </p>
 
-        <div className="containerPrice">
+        {/* <div className="containerPrice">
           {icon}
           <span className="price">{price} Kz </span> /mês
-        </div>
+        </div> */}
 
         <h3> {textPlaneInclude} </h3>
 
@@ -48,7 +48,7 @@ const RenderPrice: React.FC<RenderPriceInterface> = ({
 
         <div>
           <ButtonSeeMore
-            value={'Solicitar'}
+            value={'Solicitar orçamento'}
             onClick={onClick}
             colorBase={defaultTheme.colors['brand-primary']}
             colorSecondary={defaultTheme.colors['brand-super-dark']}

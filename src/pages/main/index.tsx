@@ -57,9 +57,7 @@ function Home() {
 
   const date = new Date()
 
-  function solicitation() {
-    router.push('')
-  }
+  function solicitation() {}
 
   const docSolutions = [
     {
@@ -238,13 +236,11 @@ function Home() {
   ]
   const listarClients = docClients.map((item, index) => {
     return (
-      <>
-        <div key={index} className="clients">
-          <NavLink href={item.link}>
-            <img src={item.imgUrl} alt="" />
-          </NavLink>
-        </div>
-      </>
+      <div key={index} className="clients">
+        <NavLink href={item.link}>
+          <img src={item.imgUrl} alt="" />
+        </NavLink>
+      </div>
     )
   })
 
@@ -364,7 +360,7 @@ function Home() {
       descriptionPlane: 'Projetado para empresas com requisitos básicos de TI',
       icon: <SiOpenai />,
       price: '70.250',
-      textPlaneInclude: 'Todos os serviços básicos incluem:',
+      textPlaneInclude: 'Este plano básicos inclui:',
       serviceIncluded: [
         'Monitoramento do sistema 24/7',
         'Gerenciamento de segurança',
@@ -378,7 +374,7 @@ function Home() {
       descriptionPlane: 'Projetado para empresas com requisitos médios de TI',
       icon: <TfiWorld />,
       price: '70.250',
-      textPlaneInclude: 'Todos os serviços sliver incluem:',
+      textPlaneInclude: 'Este plano sliver inclui:',
       serviceIncluded: [
         'Monitoramento do sistema 24/7',
         'Gerenciamento de segurança',
@@ -393,7 +389,7 @@ function Home() {
         'Projetado para empresas com requisitos profissional de TI',
       icon: <GiSpikesFull />,
       price: '70.250',
-      textPlaneInclude: 'Todos os serviços profissional incluem:',
+      textPlaneInclude: 'Este plano profissional inclui:',
       serviceIncluded: [
         'Monitoramento do sistema 24/7',
         'Gerenciamento de segurança',
@@ -653,7 +649,7 @@ function Home() {
                 <div className="containerTitleSection">
                   <div>
                     <h4>Nossos Projetos Concluídos</h4>
-                    <h1>Conheça alguns dos nossos projectos</h1>
+                    <h1>Conheça alguns dos nossos projetos</h1>
                   </div>
                 </div>
               </div>
@@ -674,45 +670,7 @@ function Home() {
 
             <div className="containerBottom">
               <ButtonSeeMore
-                value={'Ver mais projectos'}
-                onClick={() => goTo(routsNameMain.home)}
-                colorBase={defaultTheme.colors['brand-primary']}
-                colorSecondary={defaultTheme.colors['brand-super-dark']}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="deponents">
-        <div className="containerContent">
-          <div className="containerDeponents">
-            <div className="containerHeader">
-              <div className="containerLeft">
-                <div className="containerTitleSection">
-                  <div>
-                    <h4>Depoimentos de clientes</h4>
-                    <h1>O que eles estão falando?</h1>
-                  </div>
-                </div>
-              </div>
-
-              <div className="containerRight" data-aos="fade-left">
-                <p>
-                  Porttitor scelerisque eu fringilla consectetur tellus,
-                  facilisi viverra. Nascetur luctus feugiat sed aliquam tellus
-                  aliquet risus tortor tellus.
-                </p>
-              </div>
-            </div>
-
-            <div className="containerDeponentsRow" data-aos="fade-up">
-              {listarDeponents}
-            </div>
-
-            <div className="containerBottom">
-              <ButtonSeeMore
-                value={'Ver outros depoimentos'}
+                value={'Ver mais projetos'}
                 onClick={() => goTo(routsNameMain.home)}
                 colorBase={defaultTheme.colors['brand-primary']}
                 colorSecondary={defaultTheme.colors['brand-super-dark']}

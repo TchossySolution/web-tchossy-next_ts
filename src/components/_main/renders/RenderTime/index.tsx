@@ -56,9 +56,9 @@ const RenderTime: React.FC<RenderTimeInterface> = ({
         break
     }
   }
-  const renderSocialMedia = socialLinks.map((item, index) =>
-    typeLink(item, index)
-  )
+  // const renderSocialMedia = socialLinks.map((item, index) =>
+  //   typeLink(item, index)
+  // )
 
   return (
     <TimeContainer>
@@ -67,7 +67,7 @@ const RenderTime: React.FC<RenderTimeInterface> = ({
           <div className="containerImgMember">
             <img src={imgUrl} alt="" />
 
-            <div className="containerSocialMedia">{renderSocialMedia}</div>
+            {/* <div className="containerSocialMedia">{renderSocialMedia}</div> */}
             <div className="shadow"></div>
           </div>
 

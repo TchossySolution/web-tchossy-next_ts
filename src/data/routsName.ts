@@ -13,9 +13,9 @@ export const routsNameMain = {
   service: `/${baseMain}/service`,
   blog: {
     index: `/${baseMain}/blog`,
-    tag: `/${baseMain}/blog/[...blog]`,
-    details: `/${baseMain}/blog/post/[...slug]`,
-    category: `/${baseMain}/blog/[...blog]`
+    tag: `/${baseMain}/blog/search/[...blog]`,
+    details: `/${baseMain}/blog/post/[...post]`,
+    category: `/${baseMain}/blog/search/[...blog]`
   },
   contact: `/${baseMain}/contact`
 }

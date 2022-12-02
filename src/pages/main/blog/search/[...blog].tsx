@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import { BiSearch } from 'react-icons/bi'
 
 // Layout
-import RootLayoutMain from '../../../Layout/RootLayoutMain'
+import RootLayoutMain from '../../../../Layout/RootLayoutMain'
 
 // Styles
 import {
@@ -13,17 +13,17 @@ import {
   ContainerListBlog,
   ContainerFilter,
   SLink
-} from '../../../styles/pages/_main/BlogStyles'
+} from '../../../../styles/pages/_main/BlogStyles'
 
 // Routs
-import { routsNameMain } from '../../../data/routsName'
+import { routsNameMain } from '../../../../data/routsName'
 
 // Components
-import RenderPost from '../../../components/_main/renders/RenderPost'
-import RenderPostWithDate from '../../../components/_main/renders/RenderPostWithDate'
+import RenderPost from '../../../../components/_main/renders/RenderPost'
+import RenderPostWithDate from '../../../../components/_main/renders/RenderPostWithDate'
 import Link from 'next/link'
-import HeroSection from '../../../components/_main/HeroSection'
-import { routsNameString } from '../../../data/routsNameString'
+import HeroSection from '../../../../components/_main/HeroSection'
+import { routsNameString } from '../../../../data/routsNameString'
 
 function BlogNew() {
   const router = useRouter()

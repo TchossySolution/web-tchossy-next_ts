@@ -37,13 +37,12 @@ import { FaQuoteLeft } from 'react-icons/fa'
 
 function Post() {
   const router = useRouter()
-  const id = router.query.id as string
+  const postPath = (router.query.post as string[]) || []
 
   const [numComment, setNumComment] = useState(2)
 
-  // console.log('searchPath', id)
-  // console.log('============================')
-  console.log('router.query.blog', router.query)
+  const idPath = postPath[0] as string
+  const titlePath = postPath[1] as string
 
   const docPosts = [
     {
@@ -225,7 +224,7 @@ function Post() {
     <ContainerBlog>
       <HeroSection
         backgroundImage="https://cdn.lifehack.org/wp-content/uploads/2015/12/11224842/Coffee.jpg"
-        title={id}
+        title={titlePath}
         base1="blog"
         base2="post"
       />

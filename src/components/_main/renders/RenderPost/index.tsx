@@ -12,8 +12,8 @@ function RenderPost({ post }: any) {
   return (
     <ContainerPosts>
       <Link
-        href={routsNameMain.blog.tag}
-        as={`${routsNameString.blog.details as string}${post._id}`}
+        href={routsNameMain.blog.details}
+        as={`${routsNameString.blog.details as string}${post._id}/${post.nome}`}
       >
         <div className="containerImg">
           <img src={post.imagePost} alt={post.marca} width="400" height="300" />

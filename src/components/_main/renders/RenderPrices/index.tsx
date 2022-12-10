@@ -33,14 +33,14 @@ const RenderPrice: React.FC<RenderPriceInterface> = ({
   return (
     <CardContainer>
       <div className="containerRenderPrice">
+        <div className="containerPrice">
+          <div className="containerIcon">{icon}</div>
+          {/* <span className="price">{price} Kz </span> /mês */}
+        </div>
+
         <h1> {titlePlane} </h1>
 
         <p> {descriptionPlane} </p>
-
-        {/* <div className="containerPrice">
-          {icon}
-          <span className="price">{price} Kz </span> /mês
-        </div> */}
 
         <h3> {textPlaneInclude} </h3>
 

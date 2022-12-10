@@ -10,16 +10,56 @@ export const CardContainer = styled.div`
   padding: 2rem 1rem;
   /* border: 0.1rem solid ${({ theme }) => theme.colors['brand-secondary']}; */
 
-  background-color: ${({ theme }) => theme.colors['base-white']};
+  background-color: #222429;
   background-image: url('backgrounds/bg_pricing.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position: bottom right;
 
   -webkit-box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.21);
   box-shadow: 0px 0px 18px 2px rgba(0, 0, 0, 0.21);
 
   transition: 0.5s ease;
   overflow: hidden;
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+    }
+    70% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes rotationsIn {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotationsOut {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 
   .containerRenderPrice {
     position: relative;
@@ -37,7 +77,7 @@ export const CardContainer = styled.div`
       text-transform: capitalize;
       text-align: start;
       transition: ease 0.5s;
-      color: ${props => props.theme.colors['base-title']};
+      color: ${props => props.theme.colors['base-subtitle']};
 
       display: -webkit-box;
       -webkit-line-clamp: 2;
@@ -52,7 +92,7 @@ export const CardContainer = styled.div`
       text-transform: capitalize;
       text-align: start;
       transition: ease 0.5s;
-      color: ${props => props.theme.colors['base-text']};
+      color: ${props => props.theme.colors['base-text-gray']};
     }
 
     .containerPrice {
@@ -64,9 +104,14 @@ export const CardContainer = styled.div`
       justify-content: flex-start;
       gap: 1rem;
 
-      svg {
-        font-size: 4rem;
-        color: ${props => props.theme.colors['brand-primary']};
+      .containerIcon {
+        animation: zoomIn 0.2s;
+
+        svg {
+          font-size: 4rem;
+          color: ${props => props.theme.colors['brand-primary']};
+          animation: rotationsIn 0.4s;
+        }
       }
 
       .price {
@@ -78,7 +123,7 @@ export const CardContainer = styled.div`
 
     h3 {
       font-size: 1rem;
-      color: ${props => props.theme.colors['brand-primary']};
+      color: ${props => props.theme.colors['base-subtitle']};
     }
 
     ul {
@@ -92,7 +137,7 @@ export const CardContainer = styled.div`
         list-style: none;
         font-size: 0.9rem;
         font-weight: 600;
-        color: ${props => props.theme.colors['base-text-bold']};
+        color: ${props => props.theme.colors['base-text-gray']};
 
         span {
           font-size: 1.4rem;
@@ -120,27 +165,32 @@ export const CardContainer = styled.div`
   :hover {
     transform: scale(1.02);
 
-    /* .containerRenderPrice {
-      z-index: 0;
+    .containerRenderPrice {
+      /* z-index: 0;
       h1 {
         color: ${props => props.theme.colors['base-white']};
       }
 
       p {
         color: ${props => props.theme.colors['base-white']};
-      }
+      } */
 
       .containerPrice {
-        svg {
-          color: ${props => props.theme.colors['base-white']};
+        .containerIcon {
+          animation: zoomOut 0.2s;
+
+          svg {
+            color: ${props => props.theme.colors['base-white']};
+            animation: rotationsOut 0.4s;
+          }
         }
 
-        .price {
+        /* .price {
           color: ${props => props.theme.colors['base-white']};
-        }
+        } */
       }
 
-      h3 {
+      /* h3 {
         color: ${props => props.theme.colors['base-white']};
       }
 
@@ -152,8 +202,8 @@ export const CardContainer = styled.div`
             color: ${props => props.theme.colors['base-white']};
           }
         }
-      }
-    } */
+      } */
+    }
 
     ::before {
       width: 2%;

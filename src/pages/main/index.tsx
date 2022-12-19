@@ -469,7 +469,7 @@ function Home() {
 
             <div className="contentRight" data-aos="fade-up">
               <div className="containerTitleSection">
-                <h4>Sobre sua empresa</h4>
+                <h4>Sobre nossa empresa</h4>
                 <h1>Somos Parceiros de Suas Inovações</h1>
               </div>
 

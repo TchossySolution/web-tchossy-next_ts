@@ -25,7 +25,7 @@ function HeroSection({
     <HeroContainerStyles backgroundImage={backgroundImage}>
       <div className="infoHero">
         <div className="path">
-          <Link href={routsNameMain.home as string}>Home</Link>
+          <Link href={routsNameMain.home as string}>Casa</Link>
           {base1 && (
             <>
               <p>

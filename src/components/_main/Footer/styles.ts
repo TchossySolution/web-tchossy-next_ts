@@ -16,7 +16,7 @@ export const FooterContainerStyles = styled.footer`
 
     padding: 8rem 2rem;
 
-    /* background-image: url('/backgrounds/lines-footer.png'); */
+    /* background-image: url('/backgrounds/lines-footer1.png'); */
 
     background-color: ${({ theme }) => theme.colors['brand-primary-dark']};
 
@@ -96,6 +96,7 @@ export const FooterContainerStyles = styled.footer`
 
       img {
         width: 80%;
+        height: auto;
       }
 
       .containerSocialMedia {

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
+import Image from 'next/image'
 
 // Moludos de Icons
 import { MdEmail, MdAccessTimeFilled } from 'react-icons/md'
@@ -45,6 +46,9 @@ import ModalSearch from '../modals/ModalSearch'
 import { useTranslation } from 'react-i18next'
 import i18n from '../../../i18n'
 import { darkTheme } from '../../../themes/darkTheme'
+
+// Images
+import imgLogoSemNOme from '../../../../public/it_logo_name.png'
 
 interface ISettings {
   name: string
@@ -182,7 +186,7 @@ function HeaderMain() {
 
       <HeaderContainerStyles>
         <div className="containerLogo">
-          <img src="it_logo_name.png" alt="Tchossy" />
+          <Image src={imgLogoSemNOme} alt="Tchossy" />
         </div>
 
         <div className="containerMenu">

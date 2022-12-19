@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { LayoutProps } from '../@types/pageWithLayoutsTypes'
+import { LayoutProps } from '../models/types/pageWithLayoutsTypes'
 
 const RootLayout: LayoutProps = ({ children }) => {
   return (

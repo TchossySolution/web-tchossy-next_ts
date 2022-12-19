@@ -1,3 +1,7 @@
+import Link from 'next/link'
+import Image from 'next/image'
+
+// Icons
 import {
   MdEmail,
   MdAccessTimeFilled,
@@ -7,11 +11,18 @@ import {
 import { BsFacebook, BsInstagram, BsTwitter, BsWhatsapp } from 'react-icons/bs'
 import { BsSearch } from 'react-icons/bs'
 import { IoCall, IoCallOutline, IoSend } from 'react-icons/io5'
+
+// Themes
 import { defaultTheme } from '../../../themes/default'
 
+// Styles
 import { FooterContainerStyles } from './styles'
+
+// Routas
 import { routsNameMain } from '../../../data/routsName'
-import Link from 'next/link'
+
+// Images
+import imgLogoSemNOme from '../../../../public/it_logo_name.png'
 
 function FooterMain() {
   return (
@@ -19,7 +30,7 @@ function FooterMain() {
       <FooterContainerStyles>
         <div className="containerTop">
           <div className="containerInfoTchossy">
-            <img src="it_logo_name.png" alt="Tchossy" />
+            <Image src={imgLogoSemNOme} alt="Tchossy" />
 
             <p>
               Trabalhamos com paixão de enfrentar desafios e criar soluções

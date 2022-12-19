@@ -31,6 +31,7 @@ export const HeaderContainerStyles = styled.header`
 
     img {
       width: 96%;
+      height: auto;
     }
   }
 

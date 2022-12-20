@@ -2,14 +2,13 @@ import styled, { keyframes } from 'styled-components'
 
 export const TimeContainer = styled.div`
   position: relative;
-  flex: 1;
 
   flex-basis: auto;
   flex-grow: 0;
   flex-shrink: 0;
 
   width: 100%;
-  max-width: 28rem;
+  max-width: 24rem;
   min-width: 16rem;
 
   cursor: pointer;

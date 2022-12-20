@@ -5,7 +5,7 @@ import StarRatingStatic from '../../others/StarRatingStatic'
 
 import { CardContainer } from './styles'
 
-interface RenderPriceInterface {
+interface RenderPriceType {
   titlePlane: string
   descriptionPlane: string
   icon: any
@@ -15,7 +15,7 @@ interface RenderPriceInterface {
   onClick: any
 }
 
-const RenderPrice: React.FC<RenderPriceInterface> = ({
+const RenderPrice: React.FC<RenderPriceType> = ({
   titlePlane,
   descriptionPlane,
   icon,

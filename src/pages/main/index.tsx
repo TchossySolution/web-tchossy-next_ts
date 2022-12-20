@@ -44,13 +44,14 @@ import RenderCardBlog from '../../components/_main/renders/RenderCardRecenteBlog
 import RenderSolutions from '../../components/_main/renders/RenderSolutions'
 import ButtonBase from '../../components/_main/buttons/ButtonBase'
 import { AiFillCode, AiFillStar } from 'react-icons/ai'
-import RenderTime from '../../components/_main/renders/RenderTime'
+import RenderMember from '../../components/_main/renders/RenderMember'
 import { NavLink } from '../../components/NavLink'
 import RenderResumeService from '../../components/_main/renders/RenderResumeService'
 import RenderProject from '../../components/_main/renders/RenderProject'
 import RenderDeponents from '../../components/_main/renders/RenderDeponents'
 import RenderPrice from '../../components/_main/renders/RenderPrices'
 import { TfiWorld } from 'react-icons/tfi'
+import { projectPropsType } from '../../models/types/projectTypes'
 
 function Home() {
   const router = useRouter()
@@ -146,6 +147,7 @@ function Home() {
 
   const docMemberTime = [
     {
+      _id: 'g56rbe685j68r67',
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team-02.jpg',
       name: 'Cristian Perry',
@@ -166,6 +168,7 @@ function Home() {
       ]
     },
     {
+      _id: 'f43gyh37h6jj6j',
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team.jpg',
       name: 'Ana Mia Joice',
@@ -186,6 +189,7 @@ function Home() {
       ]
     },
     {
+      _id: 'f43gyh37h6jj6j',
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/04/team-03.jpg',
       name: 'Luana Sofia',
@@ -207,13 +211,7 @@ function Home() {
     }
   ]
   const listMemberTime = docMemberTime.map((item, index) => (
-    <RenderTime
-      key={index}
-      imgUrl={item.imgUrl}
-      name={item.name}
-      role={item.role}
-      socialLinks={item.socialLinks}
-    />
+    <RenderMember key={index} memberTime={item} />
   ))
 
   const docClients = [
@@ -244,8 +242,10 @@ function Home() {
     )
   })
 
-  const docProjects = [
+  const docProjects: projectPropsType[] = [
     {
+      _id: 'bqwjk89e8h8x2',
+      nome: 'Projeto de Marketing Inteligente',
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/project01.jpg',
       link: '#',
@@ -253,6 +253,8 @@ function Home() {
       tags: ['Visão', 'Ideias']
     },
     {
+      _id: 'cc87g3uie8c3dc3',
+      nome: 'Projeto de Identidade visual',
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/project04.jpg',
       link: '#',
@@ -260,6 +262,8 @@ function Home() {
       tags: ['Design', 'Identidade']
     },
     {
+      _id: '34fc3g5344tgcdsu8d9',
+      nome: 'Projeto de Consultoria',
       imgUrl:
         'https://demo.ovatheme.com/infetech/wp-content/uploads/2022/03/project02.jpg',
       link: '#',
@@ -268,15 +272,7 @@ function Home() {
     }
   ]
   const listarProjects = docProjects.map((item, index) => {
-    return (
-      <RenderProject
-        key={index}
-        imgUrl={item.imgUrl}
-        category={item.category}
-        link={item.link}
-        tags={item.tags}
-      />
-    )
+    return <RenderProject project={item} key={index} />
   })
 
   const docDeponents = [

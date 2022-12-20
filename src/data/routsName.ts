@@ -3,11 +3,17 @@ const baseMain = 'main'
 export const routsNameMain = {
   home: `/${baseMain}`,
   otherPages: {
-    projects: `/${baseMain}/projects`,
+    projects: {
+      index: `/${baseMain}/projects`,
+      details: `/${baseMain}/projects/details/[...projects]`
+    },
     team: {
       index: `/${baseMain}/team`,
-      details: `/${baseMain}/team/[id]`
-    }
+      details: `/${baseMain}/team/details/[...team]`
+    },
+    testimonial: `/${baseMain}/testimonial`,
+    pricing: `/${baseMain}/pricing`,
+    faq: `/${baseMain}/faq`
   },
   about: `/${baseMain}/about`,
   service: `/${baseMain}/service`,

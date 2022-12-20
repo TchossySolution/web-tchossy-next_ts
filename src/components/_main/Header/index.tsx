@@ -49,6 +49,7 @@ import { darkTheme } from '../../../themes/darkTheme'
 
 // Images
 import imgLogoSemNOme from '../../../../public/it_logo_name.png'
+import { IoIosArrowDown } from 'react-icons/io'
 
 interface ISettings {
   name: string
@@ -232,9 +233,38 @@ function HeaderMain() {
                   <SLink href={routsNameMain.about as string}>Sobre</SLink>
                 </span>
 
-                <span>Paginas</span>
+                <div className="dropdown">
+                  <span className="dropbtn">
+                    Paginas
+                    <IoIosArrowDown />
+                  </span>
+                  <div className="dropdown-content">
+                    <SLink
+                      href={routsNameMain.otherPages.projects.index as string}
+                    >
+                      Projetos
+                    </SLink>
+                    <SLink href={routsNameMain.otherPages.team.index as string}>
+                      Equipe
+                    </SLink>
+                    <SLink
+                      href={routsNameMain.otherPages.testimonial as string}
+                    >
+                      Depoimentos
+                    </SLink>
+                    <SLink href={routsNameMain.otherPages.pricing as string}>
+                      Preços
+                    </SLink>
+                    <SLink href={routsNameMain.otherPages.faq as string}>
+                      FAQ
+                    </SLink>
+                  </div>
+                </div>
+
                 <span>
-                  <SLink href={routsNameMain.service as string}>Serviços</SLink>
+                  <SLink href={routsNameMain.service.index as string}>
+                    Serviços
+                  </SLink>
                 </span>
 
                 <span>

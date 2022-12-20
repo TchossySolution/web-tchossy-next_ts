@@ -147,6 +147,7 @@ export const HeaderContainerStyles = styled.header`
         span {
           display: flex;
           align-items: center;
+          gap: 0.8rem;
           color: ${({ theme }) => theme.colors['base-text']};
 
           font-size: 1rem;
@@ -154,6 +155,51 @@ export const HeaderContainerStyles = styled.header`
           transition: ease 0.4s;
 
           cursor: pointer;
+        }
+        .dropdown {
+          position: relative;
+          display: inline-block;
+          transition: 0.9s ease;
+
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 4rem;
+            padding-top: 1.2rem;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            background-color: ${({ theme }) => theme.colors['base-white']};
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            transition: 0.9s ease;
+            z-index: 1;
+
+            a {
+              padding: 0.8rem 1rem;
+              text-decoration: none;
+              display: block;
+              background-color: ${({ theme }) => theme.colors['base-white']};
+              align-items: center;
+              color: ${({ theme }) => theme.colors['base-text']};
+              font-size: 1rem;
+
+              :hover {
+                color: ${({ theme }) => theme.colors['base-white']};
+                background-color: ${({ theme }) =>
+                  theme.colors['brand-primary']};
+              }
+            }
+          }
+
+          :hover {
+            .dropdown-content {
+              display: block;
+              top: 1.18rem;
+            }
+
+            .dropbtn {
+              color: ${({ theme }) => theme.colors['brand-primary']};
+            }
+          }
         }
 
         @media (max-width: 1044px) {

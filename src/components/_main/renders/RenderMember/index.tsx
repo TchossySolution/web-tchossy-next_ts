@@ -2,27 +2,16 @@ import Link from 'next/link'
 import React, { useContext, useState } from 'react'
 import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs'
 import { FaShareAlt } from 'react-icons/fa'
+import { routsNameMain } from '../../../../data/routsName'
+import { routsNameString } from '../../../../data/routsNameString'
+import {
+  memberTimeType,
+  socialLinksType
+} from '../../../../models/types/memberTime'
 import { NavLink } from '../../../NavLink'
 import { TimeContainer } from './styles'
 
-type socialLinksType = {
-  type: string
-  link: string
-}
-
-type RenderTimeInterface = {
-  imgUrl: string
-  name: string
-  role: string
-  socialLinks: socialLinksType[]
-}
-
-const RenderTime: React.FC<RenderTimeInterface> = ({
-  imgUrl,
-  name,
-  role,
-  socialLinks
-}): JSX.Element => {
+function RenderMember({ memberTime }: memberTimeType) {
   function typeLink(item: socialLinksType, index: number) {
     switch (item.type) {
       case 'facebook':
@@ -62,10 +51,15 @@ const RenderTime: React.FC<RenderTimeInterface> = ({
 
   return (
     <TimeContainer>
-      <NavLink href={`/time/123/${name}`}>
+      <Link
+        href={routsNameMain.otherPages.team.details}
+        as={`${routsNameString.otherPages.team.details as string}${
+          memberTime._id
+        }/${memberTime.name}`}
+      >
         <div className="containerContent">
           <div className="containerImgMember">
-            <img src={imgUrl} alt="" />
+            <img src={memberTime.imgUrl} alt="" />
 
             {/* <div className="containerSocialMedia">{renderSocialMedia}</div> */}
             <div className="shadow"></div>
@@ -73,8 +67,8 @@ const RenderTime: React.FC<RenderTimeInterface> = ({
 
           <div className="containerInfo">
             <div className="content">
-              <h2> {name} </h2>
-              <p> {role} </p>
+              <h2> {memberTime.name} </h2>
+              <p> {memberTime.role} </p>
             </div>
 
             <div className="containerShare">
@@ -82,9 +76,9 @@ const RenderTime: React.FC<RenderTimeInterface> = ({
             </div>
           </div>
         </div>
-      </NavLink>
+      </Link>
     </TimeContainer>
   )
 }
 
-export default RenderTime
+export default RenderMember
